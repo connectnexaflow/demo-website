@@ -259,7 +259,7 @@ function drawText(progress) {
   ctx.globalAlpha = ease;
   ctx.textAlign = 'center';
 
-  const line1a = 'Jay Verma';
+  const line1a = 'Dr Jay Verma';
   const line1b = '  Homeopathy';
   ctx.font = '300 28px serif';
   const w1a = ctx.measureText(line1a).width;
