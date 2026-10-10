@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Shree Hanuman Group | Plots, Homes & Interiors</title>
+    <link rel="preload" as="image" href="layer-poster.webp" fetchpriority="high">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #faf6ef;
+            --bg2: #f1e9dc;
+            --ink: #2a2420;
+            --mute: #6d625a;
+            --acc: #5c3d2e;
+            --gold: #b98b4a;
+            --card: #fffdf9;
+            --line: #e4d9c8;
+            --nav: 64px
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav) + 8px);
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: Inter, system-ui, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        img,
+        video,
+        iframe {
+            max-width: 100%
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.15
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 max(22px, env(safe-area-inset-left))
+        }
+
+        .wrap>* {
+            min-width: 0
+        }
+
+        /* nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: color-mix(in srgb, var(--bg) 92%, transparent);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        nav .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            height: var(--nav)
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .logo img {
+            height: 42px;
+            width: auto;
+            display: block
+        }
+
+        .logo b {
+            color: var(--gold)
+        }
+
+        nav ul {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            font-size: 14px;
+            color: var(--mute)
+        }
+
+        nav ul a:hover {
+            color: var(--ink)
+        }
+
+        .navr {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 40px;
+            background: var(--acc);
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            transition: .3s;
+            border: 1px solid var(--acc);
+            text-align: center
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(92, 61, 46, .3)
+        }
+
+        .btn.o {
+            background: transparent;
+            color: var(--ink);
+            border-color: var(--ink)
+        }
+
+        .burger {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--card);
+            cursor: pointer;
+            padding: 0;
+            position: relative
+        }
+
+        .burger i {
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            height: 2px;
+            background: var(--ink);
+            border-radius: 2px;
+            transition: .3s
+        }
+
+        .burger i:nth-child(1) {
+            top: 15px
+        }
+
+        .burger i:nth-child(2) {
+            top: 21px
+        }
+
+        .burger i:nth-child(3) {
+            top: 27px
+        }
+
+        nav.open .burger i:nth-child(1) {
+            top: 21px;
+            transform: rotate(45deg)
+        }
+
+        nav.open .burger i:nth-child(2) {
+            opacity: 0
+        }
+
+        nav.open .burger i:nth-child(3) {
+            top: 21px;
+            transform: rotate(-45deg)
+        }
+
+        @media(max-width:1020px) {
+            .burger {
+                display: block
+            }
+
+            nav ul {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 100%;
+                flex-direction: column;
+                gap: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--line);
+                padding: 6px 22px 14px;
+                font-size: 16px;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition: .3s
+            }
+
+            nav.open ul {
+                max-height: 80vh;
+                opacity: 1;
+                visibility: visible
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 13px 0;
+                border-bottom: 1px solid var(--line)
+            }
+        }
+
+        @media(max-width:600px) {
+            .logo span {
+                display: none
+            }
+
+            .logo img {
+                height: 40px
+            }
+
+            .navr .btn {
+                padding: 11px 16px;
+                font-size: 13px
+            }
+        }
+
+        @media(max-width:360px) {
+            .navr .btn {
+                display: none
+            }
+        }
+
+        /* hero */
+        .hero {
+            padding: 20px 0 24px;
+            background: radial-gradient(circle at 80% 20%, var(--bg2), transparent 60%)
+        }
+
+        .hero .wrap {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 30px;
+            align-items: center
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 14px
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5.4vw, 62px)
+        }
+
+        .hero h1 em {
+            color: var(--acc);
+            font-style: italic
+        }
+
+        .hero p {
+            color: var(--mute);
+            margin: 18px 0 26px;
+            max-width: 480px
+        }
+
+        .cta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .chips {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 24px
+        }
+
+        .chip {
+            font-size: 13px;
+            padding: 7px 14px;
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            background: var(--card)
+        }
+
+        @media(max-width:860px) {
+            .hero .wrap {
+                grid-template-columns: 1fr;
+                gap: 10px
+            }
+
+            .hero p {
+                max-width: none
+            }
+        }
+
+        @media(max-width:480px) {
+            .cta .btn {
+                flex: 1 1 100%
+            }
+        }
+
+        /* hero video */
+        .scene {
+            display: grid;
+            place-items: center;
+            padding: 10px 0
+        }
+
+        #posterImg,
+        #layerVideo {
+            grid-area: 1/1;
+            display: block;
+            width: min(560px, 100%);
+            height: auto;
+            mix-blend-mode: multiply;
+            filter: brightness(1.06) contrast(1.03)
+        }
+
+        #layerVideo {
+            cursor: pointer;
+            opacity: 0
+        }
+
+        .scene.on #layerVideo {
+            opacity: 1
+        }
+
+        .scene.on #posterImg {
+            opacity: 0
+        }
+
+        /* sections */
+        section {
+            padding: 56px 0
+        }
+
+        .alt {
+            background: var(--bg2)
+        }
+
+        .head {
+            max-width: 620px;
+            margin-bottom: 30px
+        }
+
+        .head h2 {
+            font-size: clamp(26px, 4vw, 42px)
+        }
+
+        .head p {
+            color: var(--mute);
+            margin-top: 12px
+        }
+
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px
+        }
+
+        @media(max-width:900px) {
+            .grid3 {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:820px) {
+            .grid2 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:600px) {
+            .grid3 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .step {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 28px;
+            transition: .35s
+        }
+
+        .step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 40px rgba(0, 0, 0, .1)
+        }
+
+        .num {
+            font: 700 40px 'Playfair Display', serif;
+            color: var(--gold)
+        }
+
+        .opt {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            background: var(--bg2);
+            color: var(--acc);
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            font-weight: 600
+        }
+
+        .step h3 {
+            font-size: 22px;
+            margin: 6px 0
+        }
+
+        .step p {
+            color: var(--mute);
+            font-size: 15px
+        }
+
+        .note {
+            margin-top: 18px;
+            text-align: center;
+            color: var(--mute);
+            font-size: 15px
+        }
+
+        .note b {
+            color: var(--acc)
+        }
+
+        .card {
+            border-radius: 24px;
+            min-height: 280px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            transition: .5s
+        }
+
+        .card:hover {
+            transform: translateY(-8px)
+        }
+
+        .c1 {
+            background: linear-gradient(160deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .8)), url("construction.webp") center/cover no-repeat, #4a2f22
+        }
+
+        .c2 {
+            background: linear-gradient(160deg, rgba(0, 0, 0, .05), rgba(0, 0, 0, .65)), url("interior.webp") center/cover no-repeat, #6b3f2a
+        }
+
+        .card h3 {
+            font-size: 30px
+        }
+
+        .card p {
+            opacity: .9;
+            margin: 8px 0 16px;
+            max-width: 360px
+        }
+
+        .card a {
+            font-weight: 600;
+            border-bottom: 1px solid #fff;
+            align-self: flex-start
+        }
+
+        @media(max-width:600px) {
+            .card {
+                min-height: 240px;
+                padding: 24px
+            }
+
+            .card h3 {
+                font-size: 26px
+            }
+        }
+
+/* hut */
+.hut{max-width:560px;margin:0 auto;cursor:pointer}
+.hut svg{width:100%;height:auto;display:block;overflow:visible}
+.bk{opacity:0;fill:#b8643a}
+.bk:nth-child(3n){fill:#a8552a}.bk:nth-child(3n+2){fill:#9c4a26}
+.hut .late,.hut .roof{opacity:0}
+.hut.play .bk{animation:lay .45s cubic-bezier(.3,1.4,.5,1) forwards}
+.hut.play .roof{animation:drop .8s cubic-bezier(.3,1.3,.5,1) forwards;animation-delay:var(--r)}
+.hut.play .late{animation:fade .6s forwards;animation-delay:var(--w)}
+@keyframes lay{from{opacity:0;transform:translateY(-60px)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:0;transform:translateY(-120px)}to{opacity:1;transform:none}}
+@keyframes fade{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.bk,.hut .late,.hut .roof{opacity:1}}
+
+        /* finance */
+        .fin {
+            background: linear-gradient(135deg, var(--acc), #2e1c13);
+            color: #fff;
+            border-radius: 30px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center
+        }
+
+        @media(max-width:820px) {
+            .fin {
+                grid-template-columns: 1fr;
+                padding: 30px 22px;
+                gap: 24px;
+                border-radius: 24px
+            }
+        }
+
+        .big {
+            font: 700 clamp(80px, 14vw, 150px)/1 'Playfair Display', serif;
+            color: #e9c98f
+        }
+
+        .fin h2 {
+            font-size: clamp(26px, 3.6vw, 38px)
+        }
+
+        .fin p {
+            opacity: .85;
+            margin-top: 12px
+        }
+
+        .fin ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0
+        }
+
+        .fin li {
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .18)
+        }
+
+        .fin li::before {
+            content: "✓ ";
+            color: #e9c98f;
+            font-weight: 700
+        }
+
+        .fin .btn {
+            background: #e9c98f;
+            color: #1b1b1b;
+            border-color: #e9c98f
+        }
+
+        .bar {
+            height: 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, .2);
+            margin: 14px 0 6px;
+            overflow: hidden
+        }
+
+        .bar i {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: #e9c98f;
+            transition: width 1.6s .3s
+        }
+
+        .vis .bar i {
+            width: 10%
+        }
+
+        /* prebook, stats, form */
+        .pb {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center
+        }
+
+        @media(max-width:820px) {
+            .pb {
+                grid-template-columns: 1fr;
+                gap: 28px
+            }
+        }
+
+        .tl {
+            border-left: 2px solid var(--gold);
+            padding-left: 24px
+        }
+
+        .tl div {
+            position: relative;
+            padding-bottom: 18px
+        }
+
+        .tl div:last-child {
+            padding-bottom: 0
+        }
+
+        .tl div::before {
+            content: "";
+            position: absolute;
+            left: -32px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 0 5px var(--bg)
+        }
+
+        .tl b {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px
+        }
+
+        .tl p {
+            color: var(--mute);
+            font-size: 15px
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            text-align: center
+        }
+
+        @media(max-width:700px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        .stats b {
+            display: block;
+            font: 700 clamp(34px, 6vw, 44px) 'Playfair Display', serif;
+            color: var(--acc)
+        }
+
+        .stats span {
+            color: var(--mute);
+            font-size: 14px
+        }
+
+        form {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 30px;
+            display: grid;
+            gap: 12px
+        }
+
+        @media(max-width:600px) {
+            form {
+                padding: 22px
+            }
+        }
+
+        input,
+        select {
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink);
+            font: inherit;
+            font-size: 16px;
+            width: 100%
+        }
+
+        .rv {
+            opacity: 0;
+            transform: translateY(34px);
+            transition: .9s cubic-bezier(.2, .7, .2, 1)
+        }
+
+        .rv.vis {
+            opacity: 1;
+            transform: none
+        }
+
+        /* carousels */
+        .cf {
+            position: relative;
+            height: 470px;
+            perspective: 1400px;
+            touch-action: pan-y
+        }
+
+        .cf .it {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: min(330px, 78vw);
+            margin-left: calc(min(330px, 78vw)/-2);
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: transform .7s cubic-bezier(.2, .7, .2, 1), opacity .7s, filter .7s;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, .18);
+            cursor: pointer;
+            transform-style: preserve-3d
+        }
+
+        .cf .vi {
+            height: 190px;
+            display: grid;
+            place-items: center;
+            position: relative
+        }
+
+        .cf .vi svg {
+            width: 90px;
+            height: 90px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 1.6;
+            opacity: .92
+        }
+.cf .vi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;user-select:none}
+.cf .bd{z-index:1}
+        .cf .bd {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(0, 0, 0, .35);
+            color: #fff;
+            font-size: 11px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: 5px 11px;
+            border-radius: 20px
+        }
+
+        .cf .in {
+            padding: 20px 22px 22px
+        }
+
+        .cf h3 {
+            font-size: 22px;
+            margin-bottom: 10px
+        }
+
+        .cf dl {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 7px 14px;
+            font-size: 14px
+        }
+
+        .cf dt {
+            color: var(--mute)
+        }
+
+        .cf dd {
+            font-weight: 600;
+            text-align: right
+        }
+
+        .cf .go {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+            padding: 11px;
+            border-radius: 30px;
+            background: var(--acc);
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px
+        }
+
+        .cn {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            align-items: center;
+            margin-top: 8px
+        }
+
+        .cn button {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1px solid var(--ink);
+            background: transparent;
+            color: var(--ink);
+            font-size: 20px;
+            cursor: pointer;
+            transition: .3s
+        }
+
+        .cn button:hover {
+            background: var(--acc);
+            color: #fff;
+            border-color: var(--acc);
+            transform: scale(1.08)
+        }
+
+        .dots {
+            display: flex;
+            gap: 7px
+        }
+
+        .dots i {
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+            background: var(--line);
+            transition: .4s
+        }
+
+        .dots i.on {
+            width: 26px;
+            background: var(--gold)
+        }
+
+        /* footer */
+        footer {
+            background: #241812;
+            color: #e9dfd0;
+            padding: 56px 0 0
+        }
+
+        .fg {
+            display: grid;
+            grid-template-columns: 1.3fr .8fr 1.2fr;
+            gap: 36px
+        }
+
+        .fg h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 14px
+        }
+
+        .fl {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff
+        }
+
+        .fl img {
+            height: 56px;
+            width: auto;
+            display: block
+        }
+
+        .fl b {
+            color: #e9c98f
+        }
+
+        footer p,
+        footer li {
+            font-size: 14px;
+            color: #cdbfae
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 8px
+        }
+
+        footer a:hover {
+            color: #e9c98f
+        }
+
+        .addr {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px
+        }
+
+        .addr svg {
+            flex: none;
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            stroke: #e9c98f;
+            fill: none;
+            stroke-width: 2
+        }
+
+        .map {
+            display: block;
+            width: 100%;
+            height: 190px;
+            border: 0;
+            border-radius: 14px;
+            filter: saturate(.85)
+        }
+
+        .fb {
+            margin-top: 40px;
+            padding: 18px 0;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+            text-align: center;
+            font-size: 13px;
+            color: #a99b89
+        }
+
+        @media(max-width:900px) {
+            .fg {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .fg>div:first-child {
+                grid-column: 1/-1
+            }
+        }
+
+        @media(max-width:600px) {
+            footer {
+                padding-top: 40px
+            }
+
+            .fg {
+                grid-template-columns: 1fr;
+                gap: 28px
+            }
+
+            .fl img {
+                height: 48px
+            }
+
+            .map {
+                height: 220px
+            }
+        }
+
+        @media(max-width:700px) {
+            section {
+                padding: 40px 0
+            }
+
+            .hero {
+                padding: 14px 0 8px
+            }
+
+            .head {
+                margin-bottom: 22px
+            }
+
+            .hero p {
+                margin: 14px 0 22px
+            }
+
+            .cf {
+                height: 490px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+
+            .rv {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav">
+        <div class="wrap">
+            <a class="logo" href="#top" aria-label="Shree Hanuman Group"><img src="shb-logo.webp"
+                    alt="Shree Hanuman Group logo"><span>Shree Hanuman <b>Group</b></span></a>
+            <ul id="menu">
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#services">Build &amp; Interiors</a></li>
+                <li><a href="#homes">Homes</a></li>
+                <li><a href="#furniture">Furniture</a></li>
+                <li><a href="#prebook">Pre-book</a></li>
+                <li><a href="#finance">Finance</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="navr"><a class="btn" href="#contact">Free Consultation</a>
+                <button class="burger" id="burger" aria-label="Menu"
+                    aria-expanded="false"><i></i><i></i><i></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="top">
+        <div class="wrap">
+            <div><span class="tag">Plots · Homes · Interiors</span>
+                <h1>We build the house. <em>You make it home.</em></h1>
+                <p>From plot to possession, and furnishing only if you want it. Take one service or all of them, the
+                    choice is always yours.</p>
+                <div class="cta"><a class="btn" href="#prebook">Pre-book Your Plot</a><a class="btn o"
+                        href="#services">Explore Services</a></div>
+                <div class="chips"><span class="chip">Only 10% down payment</span><span class="chip">Bank loan
+                        assistance</span><span class="chip">Design it your way</span></div>
+            </div>
+            <div class="scene" id="scene">
+                <img id="posterImg" src="layer-poster.webp" alt="Plot, construction and interiors layers" width="1000"
+                    height="800" fetchpriority="high" decoding="async">
+                <video id="layerVideo" src="layer-video.webm" width="1000" height="800" muted playsinline preload="auto"
+                    disablepictureinpicture aria-hidden="true"></video>
+            </div>
+        </div>
+    </header>
+
+    <section id="journey">
+        <div class="wrap">
+            <div class="head rv"><span class="tag">One stop, your pace</span>
+                <h2>Start anywhere. Stop anywhere.</h2>
+                <p>Every step stands on its own. Buy a plot, get a ready house, or go all the way to a furnished home.
+                </p>
+            </div>
+            <div class="grid3">
+                <div class="step rv">
+                    <div class="num">01</div>
+                    <h3>Plot</h3>
+                    <p>Choose and pre-book land in a location that suits your plans.</p>
+                </div>
+                <div class="step rv">
+                    <div class="num">02</div>
+                    <h3>Construction</h3>
+                    <p>A strong, well-built home designed around your family and budget.</p>
+                </div>
+                <div class="step rv"><span class="opt">Optional</span>
+                    <div class="num">03</div>
+                    <h3>Interiors &amp; Furniture</h3>
+                    <p>Want to do interiors yourself? Perfect. Want us to? We'd love to.</p>
+                </div>
+            </div>
+            <p class="note rv"><b>No add-ons forced.</b> Take just the constructed house and finish it your way. We're
+                happy either way.</p>
+        </div>
+    </section>
+
+<section id="build" class="alt"><div class="wrap">
+<div class="head rv"><span class="tag">Watch it rise</span><h2>Every home starts brick by brick</h2><p>Tap the hut to watch it being built again.</p></div>
+<div class="hut rv" id="hut">
+<svg viewBox="0 0 400 300" role="img" aria-label="A hut being built brick by brick">
+<defs><clipPath id="wall"><rect x="80" y="120" width="240" height="140"/></clipPath></defs>
+<ellipse cx="200" cy="266" rx="170" ry="8" fill="rgba(0,0,0,.12)"/>
+<rect x="80" y="120" width="240" height="140" fill="#e4d9c8"/>
+<g id="bricks" clip-path="url(#wall)"></g>
+<g class="late">
+<rect x="178" y="198" width="44" height="62" rx="3" fill="#4a2f22"/><circle cx="212" cy="230" r="2.5" fill="#e9c98f"/>
+<g fill="#f6e3b4" stroke="#4a2f22" stroke-width="4"><rect x="104" y="150" width="44" height="36"/><rect x="252" y="150" width="44" height="36"/></g>
+<path d="M126 150v36M104 168h44M274 150v36M252 168h44" stroke="#4a2f22" stroke-width="2.5"/>
+</g>
+<g class="roof"><polygon points="62,126 200,40 338,126" fill="#b98b4a" stroke="#8f6a35" stroke-width="4" stroke-linejoin="round"/>
+<path d="M92 108 308 108M122 88 278 88M156 66 244 66" stroke="#8f6a35" stroke-width="2.5" opacity=".6"/></g>
+<line x1="20" y1="260" x2="380" y2="260" stroke="#5c3d2e" stroke-width="4" stroke-linecap="round"/>
+</svg></div>
+</div></section>
+
+    <section id="services" class="alt">
+        <div class="wrap">
+            <div class="head rv"><span class="tag">What we do</span>
+                <h2>Two crafts, one trusted team</h2>
+            </div>
+            <div class="grid2">
+                <div class="card c1 rv">
+                    <h3>Construction</h3>
+                    <p>Residential homes, villas, commercial spaces and renovation, built with quality materials and
+                        clear timelines.</p><a href="#homes">See our homes →</a>
+                </div>
+                <div class="card c2 rv">
+                    <h3>Interiors &amp; Furniture</h3>
+                    <p>Modular spaces, sofas, beds, tables and custom pieces that make a house feel like yours.</p><a
+                        href="#furniture">See our furniture →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="homes">
+        <div class="wrap">
+            <div class="head rv"><span class="tag">Constructed homes</span>
+                <h2>Homes ready for your family</h2>
+                <p>Swipe or use the arrows. Every home comes with plot, facing and Vastu details up front.</p>
+            </div>
+            <div class="cf rv" id="cfh"></div>
+            <div class="cn" id="cnh"></div>
+        </div>
+    </section>
+
+    <section id="furniture" class="alt">
+        <div class="wrap">
+            <div class="head rv"><span class="tag">Interiors &amp; furniture (optional)</span>
+                <h2>Crafted pieces, premium finish</h2>
+                <p>Add them if you like. Honest wood details, every time.</p>
+            </div>
+            <div class="cf rv" id="cff"></div>
+            <div class="cn" id="cnf"></div>
+        </div>
+    </section>
+
+    <section id="prebook">
+        <div class="wrap pb">
+            <div class="rv"><span class="tag">Pre-booking</span>
+                <h2 style="font-size:clamp(26px,4vw,42px)">Book early. Save more. Design it your way.</h2>
+                <p style="color:var(--mute);margin:14px 0 24px">Reserve your plot before construction even starts, at
+                    early-booking value, and shape the layout, finishes and design to your taste.</p><a class="btn"
+                    href="#contact">Reserve My Plot</a>
+            </div>
+            <div class="tl rv">
+                <div><b>Pre-book the plot</b>
+                    <p>Lock in price and your preferred location.</p>
+                </div>
+                <div><b>Customise the design</b>
+                    <p>Layout, elevation and finishes as per your liking.</p>
+                </div>
+                <div><b>We build</b>
+                    <p>Transparent progress updates, start to handover.</p>
+                </div>
+                <div><b>Move in, or furnish</b>
+                    <p>Interiors only if you choose them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="finance" class="alt">
+        <div class="wrap">
+            <div class="fin rv">
+                <div>
+                    <div class="big">10%</div>
+                    <div class="bar"><i></i></div><small>Down payment. The rest through easy EMIs.</small>
+                </div>
+                <div>
+                    <h2>Own your home with just 10% down</h2>
+                    <p>No running around banks. We handle the process with you.</p>
+                    <ul>
+                        <li>Bank loan assistance, end to end</li>
+                        <li>Help with documents and approvals</li>
+                        <li>Clear, transparent pricing</li>
+                    </ul><a class="btn" href="#contact">Check Loan Eligibility</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="stats rv">
+                <div><b data-n="15">0</b><span>Years of experience</span></div>
+                <div><b data-n="200">0</b><span>Projects delivered</span></div>
+                <div><b data-n="180">0</b><span>Happy families</span></div>
+                <div><b data-n="10">0</b><span>% down payment</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="alt">
+        <div class="wrap grid2" style="align-items:center">
+            <div class="rv"><span class="tag">Let's talk</span>
+                <h2 style="font-size:clamp(26px,4vw,42px)">Planning a home? Tell us where you'd like to start.</h2>
+                <p style="color:var(--mute);margin-top:12px">Plot, construction, interiors or all three. A short call is
+                    all it takes.</p>
+            </div>
+            <form class="rv"
+                onsubmit="event.preventDefault();this.innerHTML='<h3>Thank you! We will call you soon.</h3>'">
+                <input placeholder="Your name" required><input placeholder="Phone / WhatsApp" type="tel" required>
+                <select>
+                    <option>I'm interested in...</option>
+                    <option>Pre-booking a plot</option>
+                    <option>Home construction</option>
+                    <option>Interiors &amp; furniture</option>
+                    <option>Complete home</option>
+                </select>
+                <button class="btn" type="submit">Request a Call Back</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <div class="fg">
+                <div>
+                    <a class="fl" href="#top"><img src="shb-logo.webp" alt="Shree Hanuman Group logo"
+                            loading="lazy"><span>Shree Hanuman <b>Group</b></span></a>
+                    <p>Plots, constructed homes and interiors, from the first brick to the last piece of furniture. Take
+                        one service or all of them.</p>
+                    <div class="addr" style="margin-top:18px"><svg viewBox="0 0 24 24">
+                            <path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" />
+                            <circle cx="12" cy="10" r="2.5" />
+                        </svg>
+                        <p>Krishna Nagar, Shubham City, near St. Alphonsa School,<br>Lucknow, Uttar Pradesh</p>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick links</h4>
+                    <ul>
+                        <li><a href="#top">Home</a></li>
+                        <li><a href="#journey">Journey</a></li>
+                        <li><a href="#services">Build &amp; Interiors</a></li>
+                        <li><a href="#homes">Homes</a></li>
+                        <li><a href="#furniture">Furniture</a></li>
+                        <li><a href="#prebook">Pre-book</a></li>
+                        <li><a href="#finance">Finance</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Find us</h4>
+                    <iframe class="map" title="Shree Hanuman Group location" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://maps.google.com/maps?q=Shubham%20City%20Krishna%20Nagar%20near%20St%20Alphonsa%20School%20Lucknow&amp;z=15&amp;output=embed"></iframe>
+                </div>
+            </div>
+            <div class="fb">© 2026 Shree Hanuman Group. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        /* mobile menu */
+        const nv = document.getElementById('nav'), bg = document.getElementById('burger');
+        bg.onclick = () => { const o = nv.classList.toggle('open'); bg.setAttribute('aria-expanded', o) };
+        document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => { nv.classList.remove('open'); bg.setAttribute('aria-expanded', false) }));
+        document.addEventListener('click', e => { if (!nv.contains(e.target)) nv.classList.remove('open') });
+
+        const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('vis'); io.unobserve(x.target) } }), { threshold: .15 });
+        document.querySelectorAll('.rv').forEach(el => io.observe(el));
+        const cio = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.querySelectorAll('[data-n]').forEach(b => { const t = +b.dataset.n; let c = 0; const s = Math.max(1, t / 60); const i = setInterval(() => { c += s; if (c >= t) { c = t; clearInterval(i) } b.textContent = Math.round(c) + (t >= 100 ? '+' : '') }, 25) }); cio.unobserve(x.target) } }), { threshold: .4 });
+        document.querySelectorAll('.stats').forEach(el => cio.observe(el));
+
+        /* hero video: plays once after 2s (or on first hover), freezes on last frame, click replays */
+        const v = document.getElementById('layerVideo'), sc = document.getElementById('scene');
+        v.addEventListener('playing', () => sc.classList.add('on'));
+        let played = false;
+        const playVid = () => { if (v.paused || v.ended) { v.currentTime = 0; played = true; v.play().catch(() => { }) } };
+        if (!matchMedia('(prefers-reduced-motion:reduce)').matches) setTimeout(() => { if (!played) playVid() }, 2000);
+        v.addEventListener('mouseenter', () => { if (!played) playVid() });
+        v.addEventListener('click', playVid);
+        v.addEventListener('ended', () => v.pause());
+
+        /* carousels */
+        const H = '<svg viewBox="0 0 64 64"><path d="M6 32 32 10l26 22M14 28v26h36V28M26 54V38h12v16"/></svg>',
+            S = '<svg viewBox="0 0 64 64"><path d="M10 34v-8a6 6 0 0 1 6-6h32a6 6 0 0 1 6 6v8M6 34a4 4 0 0 1 8 0v8h36v-8a4 4 0 0 1 8 0v14H6zM14 54v4M50 54v4"/></svg>',
+            B = '<svg viewBox="0 0 64 64"><path d="M6 50V16M58 50V34M6 38h52V28a6 6 0 0 0-6-6H20v16M6 50h52"/></svg>',
+            T = '<svg viewBox="0 0 64 64"><path d="M8 24h48M14 24v28M50 24v28M24 24v10M40 24v10"/></svg>';
+        const homes = [["Aarohi Villa", H, "Ready to move", "linear-gradient(135deg,#8a6e55,#4a2f22)", [["Plot size", "1,800 sq ft"], ["Facing", "East"], ["Vastu", "Fully compliant"], ["Config", "3 BHK · G+1"]]],
+        ["Shree Residency", H, "Under construction", "linear-gradient(135deg,#b98b4a,#6b3f2a)", [["Plot size", "1,350 sq ft"], ["Facing", "North"], ["Vastu", "Corrected layout"], ["Config", "2 BHK · G+1"]]],
+        ["Hanuman Enclave", H, "Pre-booking open", "linear-gradient(135deg,#6b5442,#2e1c13)", [["Plot size", "2,400 sq ft"], ["Facing", "North-East"], ["Vastu", "Fully compliant"], ["Config", "4 BHK · G+2"]]],
+        ["Gokul Heights", H, "Ready to move", "linear-gradient(135deg,#a07a5a,#5c3d2e)", [["Plot size", "1,000 sq ft"], ["Facing", "West"], ["Vastu", "Remedies included"], ["Config", "2 BHK · G+1"]]]];
+        const furn = [["Royal Sofa Set", S, "Bestseller", "linear-gradient(135deg,#7a5440,#3a2418)", [["Wood", "Seasoned teak frame"], ["Finish", "Walnut PU polish"], ["Upholstery", "Premium velvet"], ["Warranty", "5 years"]]],
+        ["Heritage Bed", B, "Custom size", "linear-gradient(135deg,#b98b4a,#5c3d2e)", [["Wood", "Sheesham solid"], ["Finish", "Hand-rubbed matte"], ["Storage", "Hydraulic box"], ["Warranty", "5 years"]]],
+        ["Dining Table", T, "6 & 8 seater", "linear-gradient(135deg,#8a6e55,#4a2f22)", [["Wood", "Burma teak top"], ["Finish", "Melamine gloss"], ["Joinery", "Mortise & tenon"], ["Warranty", "3 years"]]],
+        ["Modular Wardrobe", B, "Made to order", "linear-gradient(135deg,#6b5442,#2e1c13)", [["Material", "BWP plywood"], ["Finish", "Veneer + laminate"], ["Fittings", "Soft-close hinges"], ["Warranty", "5 years"]]]];
+        function cf(id, nid, data, cta) {
+            const box = document.getElementById(id), nav = document.getElementById(nid); let a = 0, tm;
+            box.innerHTML = data.map(d => `<div class="it"><div class="vi" style="background:${d[3]}">${d[5]?`<img src="${d[5]}" alt="${d[0]}" loading="lazy" decoding="async" draggable="false">`:d[1]}<span class="bd">${d[2]}</span></div><div class="in"><h3>${d[0]}</h3><dl>${d[4].map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl><a class="go" href="#contact">${cta}</a></div></div>`).join('');
+            nav.innerHTML = '<button aria-label="Previous">‹</button><div class="dots">' + data.map(() => '<i></i>').join('') + '</div><button aria-label="Next">›</button>';
+            const it = [...box.children], dt = [...nav.querySelectorAll('i')], n = data.length;
+            function r() { it.forEach((e, i) => { let o = i - a; if (o > n / 2) o -= n; if (o < -n / 2) o += n; const x = Math.abs(o); e.style.transform = `translateX(${o * 62}%) translateZ(${-x * 140}px) rotateY(${-o * 32}deg) scale(${1 - x * .06})`; e.style.opacity = x > 2 ? 0 : 1 - x * .28; e.style.filter = x ? 'brightness(.82)' : 'none'; e.style.zIndex = 10 - x; e.style.pointerEvents = x > 2 ? 'none' : 'auto' }); dt.forEach((d, i) => d.classList.toggle('on', i == a)) }
+            const go = k => { a = (a + k + n) % n; r() }, auto = () => { clearInterval(tm); tm = setInterval(() => go(1), 5000) };
+            nav.children[0].onclick = () => { go(-1); auto() }; nav.children[2].onclick = () => { go(1); auto() };
+            it.forEach((e, i) => e.addEventListener('click', ev => { if (i != a) { ev.preventDefault(); a = i; r(); auto() } }));
+            let sx = null; box.addEventListener('pointerdown', e => sx = e.clientX); box.addEventListener('pointerup', e => { if (sx !== null && Math.abs(e.clientX - sx) > 40) { go(e.clientX < sx ? 1 : -1); auto() } sx = null });
+            r(); auto()
+        }
+        cf('cfh', 'cnh', homes, 'Enquire about this home'); cf('cff', 'cnf', furn, 'Get a quote');
+    /* hut */
+const hut=document.getElementById('hut');let k=0,s='';
+for(let r=0;r<7;r++){const y=240-r*20;for(let c=-1;c<6;c++){const x=80+c*40+(r%2?20:0);s+=`<rect class="bk" x="${x+1}" y="${y+1}" width="38" height="18" rx="2" style="animation-delay:${k++*45}ms"/>`}}
+document.getElementById('bricks').innerHTML=s;
+hut.style.setProperty('--r',k*45+100+'ms');hut.style.setProperty('--w',k*45+800+'ms');
+const run=()=>{hut.classList.remove('play');void hut.offsetWidth;hut.classList.add('play')};
+new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){run();o.disconnect()}},{threshold:.5}).observe(hut);
+hut.onclick=run;
+/* 3D heading tilt */
+if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+document.querySelectorAll('.hero h1,section h2').forEach(h=>{
+h.addEventListener('pointermove',e=>{const b=h.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;h.style.transform=`perspective(800px) rotateY(${x*14}deg) rotateX(${-y*14}deg)`});
+h.addEventListener('pointerleave',()=>h.style.transform='')})}
+    </script>
+</body>
+
+</html>
